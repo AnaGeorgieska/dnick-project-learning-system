@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
 @Entity
 public class AnswerOption {
     @Id
@@ -22,5 +21,17 @@ public class AnswerOption {
     }
 
     public AnswerOption() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getAnswerOption() {
+        return answerOption;
+    }
+
+    public boolean isCorrect() {
+        return isCorrect;
     }
 }

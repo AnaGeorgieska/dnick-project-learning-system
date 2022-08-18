@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,6 +97,7 @@
         <div class="row my-3">
             <div>
                 1. Imagine that you are on the beach and suddenly you see that the water from the ocean begins to recede sharply. What should you do?
+                <th:block th:text="${questions.size()}"/>
             </div>
             <div class="my-1 ms-2">
                 <div class="form-check">

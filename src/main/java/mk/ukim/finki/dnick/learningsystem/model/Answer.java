@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Data
+
 @Entity
 public class Answer {
     @Id
@@ -18,5 +18,21 @@ public class Answer {
     private AnswerOption answerOption;
 
     public Answer() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public AnswerOption getAnswerOption() {
+        return answerOption;
     }
 }

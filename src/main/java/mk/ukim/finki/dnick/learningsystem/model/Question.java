@@ -6,7 +6,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Entity
 public class Question {
     @Id
@@ -15,13 +14,32 @@ public class Question {
     private String questionTitle;
     @OneToMany
     private List<AnswerOption> answerOptions;
+    @ManyToOne
+    private Course course;
 
-    public Question(String questionTitle, List<AnswerOption> answerOptions) {
+    public Question(String questionTitle, List<AnswerOption> answerOptions, Course course) {
         this.questionTitle = questionTitle;
         this.answerOptions = answerOptions;
+        this.course=course;
     }
 
     public Question() {
         answerOptions=new ArrayList<>();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getQuestionTitle() {
+        return questionTitle;
+    }
+
+    public List<AnswerOption> getAnswerOptions() {
+        return answerOptions;
+    }
+
+    public Course getCourse() {
+        return course;
     }
 }

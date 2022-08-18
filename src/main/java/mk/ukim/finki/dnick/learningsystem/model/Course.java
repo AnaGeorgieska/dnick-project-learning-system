@@ -5,21 +5,31 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
-@Data
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String courseName;
-    @OneToMany
-    private List<Question> questionList;
+    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER)
+    private List<Question> questions;
 
-    public Course(String courseName, List<Question> questionList) {
+    public Course(String courseName) {
         this.courseName = courseName;
-        this.questionList = questionList;
     }
 
     public Course() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
     }
 }
