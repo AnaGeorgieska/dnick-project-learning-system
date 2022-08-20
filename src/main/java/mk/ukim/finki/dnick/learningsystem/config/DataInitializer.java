@@ -73,9 +73,9 @@ public class DataInitializer {
         AnswerOption answerOption14 = this.answerOptionRepository.save(new AnswerOption("Break the window with a piece of clothing and go out", true));
         AnswerOption answerOption15 = this.answerOptionRepository.save(new AnswerOption("To play until someone hears and comes to your rescue", false));
         List<AnswerOption> answerOptionList5 = new ArrayList<>();
-        answerOptionList4.add(answerOption13);
-        answerOptionList4.add(answerOption14);
-        answerOptionList4.add(answerOption15);
+        answerOptionList5.add(answerOption13);
+        answerOptionList5.add(answerOption14);
+        answerOptionList5.add(answerOption15);
         Question floodQuestion5 = this.questionRepository.save(new Question("Imagine that while driving a car, the vehicle loses control and falls into a lake. The car starts to sink and you do not have much time to save yourself, what should you do?", answerOptionList5, floodCourse));
     }
 }

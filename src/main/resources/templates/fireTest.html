@@ -90,35 +90,20 @@
 
         <h1>Test</h1>
 
-        <div class="row my-3">
+        <div class="row my-3" th:each="question : ${questions}">
             <div>
-                1.  A fire suddenly breaks out in the home. Before calling the fire department, you should ...
-                <div  th:text="${questions.size()}" ></div>
+                <th:block th:text="${question.getQuestionTitle()}"/>
             </div>
             <div class="my-1 ms-2">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="1">
+                <div class="form-check" th:each="answerOption : ${question.getAnswerOptions()}">
+                    <input class="form-check-input" type="radio" name="3">
                     <label class="form-check-label">
-                        Hurry up to collect all the valuable items from the house that you do not want to burn
+                        <th:block th:text="${answerOption.getAnswerOption()}"/>
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="1">
-                    <label class="form-check-label">
-                        Try to put out the fire in every possible way
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="1">
-                    <label class="form-check-label">
-                        Cover your mouth and nose with a cloth and get out of the house as soon as possible
-                    </label>
-                </div>
+
             </div>
         </div>
-
-
-
 
         <div class="row mt-3">
             <div class="col ">
