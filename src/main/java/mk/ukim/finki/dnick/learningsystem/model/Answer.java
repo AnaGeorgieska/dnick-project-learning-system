@@ -10,8 +10,8 @@ public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private Question question;
+//    @ManyToOne
+//    private Question question;
     @ManyToOne
     private User user;
     @ManyToOne
@@ -20,13 +20,18 @@ public class Answer {
     public Answer() {
     }
 
+    public Answer(User user, AnswerOption answerOption) {
+        this.user = user;
+        this.answerOption = answerOption;
+    }
+
     public Long getId() {
         return id;
     }
 
-    public Question getQuestion() {
-        return question;
-    }
+//    public Question getQuestion() {
+//        return question;
+//    }
 
     public User getUser() {
         return user;

@@ -12,7 +12,7 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String questionTitle;
-    @OneToMany
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     private List<AnswerOption> answerOptions;
     @ManyToOne
     private Course course;
@@ -25,6 +25,11 @@ public class Question {
 
     public Question() {
         answerOptions=new ArrayList<>();
+    }
+
+    public Question(String s, Course floodCourse) {
+        this.questionTitle=s;
+        this.course=floodCourse;
     }
 
     public Long getId() {
