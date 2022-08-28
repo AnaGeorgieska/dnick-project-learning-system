@@ -25,4 +25,22 @@ public class AnswerServiceImpl implements AnswerService {
         User user=userService.findById(username);
         return answerRepository.findAllByUser(user);
     }
+
+    @Override
+    public List<Answer> findAllByUserAndCourse(String username, String courseName) {
+        User user=userService.findById(username);
+        List<Answer> answersByUser = answerRepository.findAllByUser(user);
+        List<Answer> answersByUserAndCourse = answersByUser.stream().filter(a->{
+            return a.getAnswerOption().getQuestion().getCourse().getCourseName().equals(courseName);
+        }).toList();
+        return answersByUserAndCourse;
+    }
+    @Override
+    public Answer save(Answer answer) {
+        return answerRepository.save(answer);
+    }
+    @Override
+    public void delete(Answer answer) {
+        answerRepository.delete(answer);
+    }
 }

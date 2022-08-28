@@ -26,8 +26,8 @@ public class SuccessServiceImpl implements SuccessService {
         List<AnswerOption> answerOptions= answers.stream().map(Answer::getAnswerOption).toList();
         List<AnswerOption> trueAnswerOptions = answerOptions.stream().filter(AnswerOption::isCorrect).toList();
         double temp = (trueAnswerOptions.size() * 1.0 / 12);
-        double temp2 = Math.round(temp*10000);
-        double temp3 = temp2/100;
+        double temp2 = Math.round(temp*100);
+        double temp3 = temp2;
         if(trueAnswerOptions.size()==0)
             return 0;
         else return temp3;
@@ -41,8 +41,8 @@ public class SuccessServiceImpl implements SuccessService {
         }).toList();
         List<AnswerOption> trueAnswerOptions = floodAnswerOptions.stream().filter(AnswerOption::isCorrect).toList();
         double temp = (trueAnswerOptions.size() * 1.0 / 4);
-        double temp2 = Math.round(temp*10000);
-        double temp3 = temp2/100;
+        double temp2 = Math.round(temp*100);
+        double temp3 = temp2;
         if(trueAnswerOptions.size()==0)
             return 0;
         else return temp3;
@@ -56,8 +56,8 @@ public class SuccessServiceImpl implements SuccessService {
         }).toList();
         List<AnswerOption> trueAnswerOptions = fireAnswerOptions.stream().filter(AnswerOption::isCorrect).toList();
         double temp = (trueAnswerOptions.size() * 1.0 / 4);
-        double temp2 = Math.round(temp*10000);
-        double temp3 = temp2/100;
+        double temp2 = Math.round(temp*100);
+        double temp3 = temp2;
         if(trueAnswerOptions.size()==0)
             return 0;
         else return temp3;
@@ -71,8 +71,8 @@ public class SuccessServiceImpl implements SuccessService {
         }).toList();
         List<AnswerOption> trueAnswerOptions = earthquakeAnswerOptions.stream().filter(AnswerOption::isCorrect).toList();
         double temp = (trueAnswerOptions.size() * 1.0 / 4);
-        double temp2 = Math.round(temp*10000);
-        double temp3 = temp2/100;
+        double temp2 = Math.round(temp*100);
+        double temp3 = temp2;
         if(trueAnswerOptions.size()==0)
             return 0;
         else return temp3;

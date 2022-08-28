@@ -12,5 +12,6 @@ import java.util.List;
 public interface AnswerRepository extends JpaRepository<Answer, Long> {
     List<Answer> findAll();
     List<Answer> findAllByUser(User user);
-
+    @Override
+    void delete(Answer answer);
 }

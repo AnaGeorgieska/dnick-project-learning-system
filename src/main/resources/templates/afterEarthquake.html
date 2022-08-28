@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <title>Help</title>
+    <title>Earthquake</title>
     <style>
 
         .btn-success {
@@ -42,9 +42,6 @@
             border-color: #d7a3f7;
         }
 
-        .border-primary {
-            border-color: #7835a1 !important;
-        }
 
     </style>
 </head>
@@ -94,72 +91,69 @@
 <div class="container my-lg-5">
 
     <div class="m-auto w-75">
-        <h1>Help</h1>
 
-        <div class="m-auto w-100 p-4 border border-2 border-primary  align-content-center rounded-3">
+        <h3>Stay Safe After</h3>
+        <b>There can be serious hazards after an earthquake, such as damage to the building, leaking gas and water
+            lines, or downed power lines.</b>
+        <ul>
+            <li>Wash your hands with soap and water after holding on to commonly touched surfaces or objects. If you are
+                unable to wash your hands, use hand sanitizer that contains at least 60 percent alcohol.
+            </li>
+            <li>Expect aftershocks to follow the main shock of an earthquake. Be ready to Drop, Cover, and Hold On if
+                you feel an aftershock.
+            </li>
+            <li>If you are in a damaged building, go outside and quickly move away from the building. Do not enter
+                damaged buildings.
+            </li>
+            <li>If you are trapped, send a text or bang on a pipe or wall. Cover your mouth with your shirt for
+                protection and instead of shouting, use a whistle.
+            </li>
+            <li>If you are in an area that may experience tsunamis, go inland or to higher ground immediately after the
+                shaking stops. Avoid contact with floodwaters as they can contain chemicals, sewage, and debris.
+            </li>
+            <li>Check yourself to see if you are hurt and help others if you have training. Learn how to be the help
+                until help arrives.
+            </li>
+            <ul>
+                <li>If you are sick or injured and need medical attention, contact your healthcare provider for
+                    instructions.
+                </li>
+            </ul>
+        </ul>
 
-            <div class="row m-5">
-                <div class="col">
-                    <h4>
-                        How to download your certificate
-                    </h4>
-                    <ul>
-                        <li>
-                            Navigate to your user page from the main menu on the right side
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-person" viewBox="0 0 16 16">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                            </svg>
-                        </li>
-                        <li>
-                            Click the button under the tests success statuses to download your certificate
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-download" viewBox="0 0 16 16">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                            </svg>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Button trigger modal -->
+        <div class="row my-5">
+            <div class="col ">
+                <button type="button" class="btn btn-success w-100" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                    Start test
+                </button>
             </div>
+        </div>
 
-            <div class="row m-5">
-                <div class="col">
-                    <h4>
-                        Recover from error
-                    </h4>
-                    <ul>
-                        <li>
-                            Follow the steps given on your screen how to recover from the given error.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row mx-5">
-                <div class="col">
-                    <h4>
-                        Contact
-                    </h4>
-                </div>
-            </div>
-
-            <div class="row mx-5 mb-5">
-                <div class="col">
-                    <p>
-                        Phone: +355 55 255 355
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        Email: disasters@mail.com
-                    </p>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to start the test?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                        <a class="btn btn-success w-50" href="/question/earthquake/1">
+                            Start test now
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-
-
 </div>
 
 <script src="/bootstrap/js/bootstrap.bundle.js"></script>

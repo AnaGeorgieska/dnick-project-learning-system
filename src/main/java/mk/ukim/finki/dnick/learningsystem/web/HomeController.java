@@ -31,10 +31,7 @@ public class HomeController {
     public String getUserPage() {
         return "user";
     }
-    @GetMapping("/success")
-    public String getSuccessPage() {
-        return "success";
-    }
+
     @GetMapping("/help")
     public String getHelpPage() {
         return "help";
