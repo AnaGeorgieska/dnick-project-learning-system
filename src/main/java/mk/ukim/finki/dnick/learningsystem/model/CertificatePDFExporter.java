@@ -173,6 +173,5 @@ public class CertificatePDFExporter {
         document.add(table);
 
         document.close();
-
     }
 }

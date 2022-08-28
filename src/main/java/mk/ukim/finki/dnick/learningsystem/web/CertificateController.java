@@ -3,9 +3,11 @@ package mk.ukim.finki.dnick.learningsystem.web;
 import com.lowagie.text.DocumentException;
 import mk.ukim.finki.dnick.learningsystem.model.CertificatePDFExporter;
 import mk.ukim.finki.dnick.learningsystem.model.User;
+import mk.ukim.finki.dnick.learningsystem.model.events.SendMailEvent;
 import mk.ukim.finki.dnick.learningsystem.service.interfaces.SuccessService;
 import mk.ukim.finki.dnick.learningsystem.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +24,10 @@ import java.util.Date;
 public class CertificateController {
     @Autowired
     private UserService userService;
-
     @Autowired
     private SuccessService successService;
+    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
 
     @GetMapping("/export/pdf")
     public void exportToPDF(HttpServletRequest request, HttpServletResponse response) throws DocumentException, IOException {
@@ -45,5 +48,13 @@ public class CertificateController {
                 successService.calculateTotalSuccess(username));
         exporter.export(response);
 
+    }
+
+    @GetMapping("/email")
+    public String email(HttpServletRequest request, HttpServletResponse response)  {
+        String username = request.getRemoteUser();
+        User user = userService.findById(username);
+        this.applicationEventPublisher.publishEvent(new SendMailEvent(user));
+        return "redirect:/user";
     }
 }
