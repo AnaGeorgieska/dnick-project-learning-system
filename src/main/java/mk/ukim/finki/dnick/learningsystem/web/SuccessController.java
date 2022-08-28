@@ -11,43 +11,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/")
-public class HomeController {
+@RequestMapping("/success")
+public class SuccessController {
     private final UserService userService;
     private final SuccessService successService;
 
-    public HomeController(UserService userService, SuccessService successService) {
+    public SuccessController(UserService userService, SuccessService successService) {
         this.userService = userService;
         this.successService = successService;
     }
 
-    @GetMapping
-    public String getHomePage(HttpServletRequest request) {
+    @GetMapping("/flood")
+    public String getSuccessFloodPage(HttpServletRequest request, Model model) {
         String username = request.getRemoteUser();
         if(username!=null)
         {
             User user = userService.findById(username);
             System.out.println(user.toString());
+            model.addAttribute("success", successService.calculateFloodTestSuccess(username));
         }
-        return "home";
+        return "success";
     }
-    @GetMapping("/user")
-    public String getUserPage(HttpServletRequest request, Model model) {
+    @GetMapping("/fire")
+    public String getSuccessFirePage(HttpServletRequest request, Model model) {
         String username = request.getRemoteUser();
         if(username!=null)
         {
             User user = userService.findById(username);
             System.out.println(user.toString());
-            model.addAttribute("floodSuccess", successService.calculateFloodTestSuccess(username));
-            model.addAttribute("fireSuccess", successService.calculateFireTestSuccess(username));
-            model.addAttribute("earthquakeSuccess", successService.calculateEarthquakeTestSuccess(username));
-            model.addAttribute("success", successService.calculateTotalSuccess(username));
+            model.addAttribute("success", successService.calculateFireTestSuccess(username));
         }
-        return "user";
+        return "success";
     }
-
-    @GetMapping("/help")
-    public String getHelpPage() {
-        return "help";
+    @GetMapping("/earthquake")
+    public String getSuccessEarthPage(HttpServletRequest request, Model model) {
+        String username = request.getRemoteUser();
+        if(username!=null)
+        {
+            User user = userService.findById(username);
+            System.out.println(user.toString());
+            model.addAttribute("success", successService.calculateEarthquakeTestSuccess(username));
+        }
+        return "success";
     }
 }
