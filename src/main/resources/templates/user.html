@@ -98,14 +98,51 @@
 
         <div class="m-auto w-100 p-4 border border-2 border-primary text-center align-content-center rounded-3">
             <div class="row m-5">
-
                 <div class="col">
                     <h5>Flood test success</h5>
                 </div>
                 <div class="col">
                     <div class="progress  align-middle">
-                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                             aria-valuemin="0" aria-valuemax="100">25%
+                        <div class="progress-bar" role="progressbar"
+                             th:style="'width:' +  ${floodSuccess} + '%;'"
+                             th:aria-valuenow="${floodSuccess}"
+                             aria-valuemin="0" aria-valuemax="100" ><th:block th:text="${floodSuccess}"/>%
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+<!--                    <a th:href="@{/question/flood/1} " class="btn btn-success">Take test-->
+
+<!--                    </a>-->
+                    <!-- Button trigger modal -->
+                    <div class="row ">
+                        <div class="col ">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">
+                                Take test
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to start the test?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                                    <a class="btn btn-success w-50" href="/question/flood/1">
+                                        Start test now
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,8 +156,46 @@
                 </div>
                 <div class="col">
                     <div class="progress  align-middle">
-                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100"
-                             aria-valuemin="0" aria-valuemax="100">100%
+                        <div class="progress-bar" role="progressbar"
+                             th:style="'width:' +  ${fireSuccess} + '%;'"
+                             th:aria-valuenow="${fireSuccess}"
+                             aria-valuemin="0" aria-valuemax="100"><th:block th:text="${fireSuccess}"/>%
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                    <a th:href="@{/question/flood/1} " class="btn btn-success">Take test-->
+
+                    <!--                    </a>-->
+                    <!-- Button trigger modal -->
+                    <div class="row ">
+                        <div class="col ">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop2">
+                                Take test
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                         aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel2">Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to start the test?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                                    <a class="btn btn-success w-50" href="/question/fire/1">
+                                        Start test now
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,8 +210,46 @@
                 </div>
                 <div class="col">
                     <div class="progress  align-middle">
-                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                             aria-valuemin="0" aria-valuemax="100">50%
+                        <div class="progress-bar" role="progressbar"
+                             th:style="'width:' +  ${earthquakeSuccess} + '%;'"
+                             th:aria-valuenow="${earthquakeSuccess}"
+                             aria-valuemin="0" aria-valuemax="100"><th:block th:text="${earthquakeSuccess}"/>%
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!--                    <a th:href="@{/question/flood/1} " class="btn btn-success">Take test-->
+
+                    <!--                    </a>-->
+                    <!-- Button trigger modal -->
+                    <div class="row ">
+                        <div class="col ">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop3">
+                                Take test
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                         aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel3">Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to start the test?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
+                                    <a class="btn btn-success w-50" href="/question/earthquake/1">
+                                        Start test now
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
