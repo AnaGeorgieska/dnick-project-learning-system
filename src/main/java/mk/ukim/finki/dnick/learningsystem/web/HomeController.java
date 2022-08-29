@@ -1,6 +1,7 @@
 package mk.ukim.finki.dnick.learningsystem.web;
 
 import mk.ukim.finki.dnick.learningsystem.model.User;
+import mk.ukim.finki.dnick.learningsystem.service.interfaces.AnswerService;
 import mk.ukim.finki.dnick.learningsystem.service.interfaces.SuccessService;
 import mk.ukim.finki.dnick.learningsystem.service.interfaces.UserService;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,12 @@ import javax.servlet.http.HttpServletRequest;
 public class HomeController {
     private final UserService userService;
     private final SuccessService successService;
+    private final AnswerService answerService;
 
-    public HomeController(UserService userService, SuccessService successService) {
+    public HomeController(UserService userService, SuccessService successService, AnswerService answerService) {
         this.userService = userService;
         this.successService = successService;
+        this.answerService = answerService;
     }
 
     @GetMapping
@@ -42,6 +45,9 @@ public class HomeController {
             model.addAttribute("fireSuccess", successService.calculateFireTestSuccess(username));
             model.addAttribute("earthquakeSuccess", successService.calculateEarthquakeTestSuccess(username));
             model.addAttribute("success", successService.calculateTotalSuccess(username));
+            model.addAttribute("disabledFire", answerService.findAllByUserAndCourse(username, "Fire").isEmpty());
+            model.addAttribute("disabledFlood", answerService.findAllByUserAndCourse(username, "Flood").isEmpty());
+            model.addAttribute("disabledEarthquake", answerService.findAllByUserAndCourse(username, "Earthquake").isEmpty());
         }
         return "user";
     }
