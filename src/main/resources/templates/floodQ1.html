@@ -36,8 +36,14 @@
             background-color: #7835a1;
             border-color: #d7a3f7;
         }
-
-
+        .btn-outline-light:hover {
+            color: #fff;
+            background-color: #d7a3f7;
+            border-color: #fff;
+        }
+        .border-primary {
+            border-color: #7835a1 !important;
+        }
 
     </style>
 </head>
@@ -92,11 +98,11 @@
 
     <form class="m-auto w-75" method="post" action="/question/flood/q1">
 
-        <h1>Test</h1>
-
-        <div class="row my-3" >
+        <h1>Flood test question #1</h1>
+        <div class="m-auto w-100 p-4 border border-2 border-primary rounded-3" >
+        <div class="row m-5" >
             <div>
-                <th:block th:text="${question.getQuestionTitle()}"/>
+                1.<th:block th:text="${question.getQuestionTitle()}"/>
             </div>
             <div class="my-1 ms-2">
                 <div class="form-check" th:each="answerOption : ${question.getAnswerOptions()}">
@@ -110,16 +116,26 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row m-5">
+            <div class="col ">
+            </div>
+            <div class="col ">
+            </div>
+            <div class="col ">
+            </div>
             <div class="col ">
                 <button class="btn btn-success w-100"  type="submit">
                     Next
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
                 </button>
             </div>
 
         </div>
 
-
+        </div>
     </form>
 
 
