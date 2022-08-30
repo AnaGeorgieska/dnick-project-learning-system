@@ -19,6 +19,12 @@
             border-color: #d7a3f7;
         }
 
+        .btn-outline-light:hover {
+            color: #fff;
+            background-color: #d7a3f7;
+            border-color: #fff;
+        }
+
         .btn-check:focus + .btn-success, .btn-success:focus {
             color: #fff;
             background-color: #7835a1;
@@ -75,6 +81,12 @@
             </ul>
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" href="#">
+                            <th:block th:if="${#request.getRemoteUser() != null}"
+                                      th:text="${#request.getRemoteUser()}"></th:block>
+                        </a>
+                    </li>
                     <li class="nav-item ">
                         <a class=" btn btn-light mx-2 fw-bold" href="/user">Results</a>
                     </li>
@@ -98,7 +110,6 @@
 <div class="container my-lg-5">
 
     <div class="m-auto w-75">
-        <h1>User</h1>
 
         <div class="m-auto w-100 p-4 border border-2 border-primary text-center align-content-center rounded-3">
             <div class="row m-5">

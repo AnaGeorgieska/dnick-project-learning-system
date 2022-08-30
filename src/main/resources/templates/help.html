@@ -45,7 +45,11 @@
         .border-primary {
             border-color: #7835a1 !important;
         }
-
+        .btn-outline-light:hover {
+            color: #fff;
+            background-color: #d7a3f7;
+            border-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +74,7 @@
                     <a class="nav-link" href="/course/earthquake">Earthquake</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-lighter" href="/help"><small>Help</small></a>
+                    <a class="nav-link text-dark fw-lighter active" href="/help"  ><small>Help</small></a>
                 </li>
             </ul>
             <div class="d-flex">
@@ -98,7 +102,6 @@
 <div class="container my-lg-5">
 
     <div class="m-auto w-75">
-        <h1>Help</h1>
 
         <div class="m-auto w-100 p-4 border border-2 border-primary  align-content-center rounded-3">
 
@@ -109,18 +112,35 @@
                     </h4>
                     <ul>
                         <li>
-                            Navigate to your user page from the main menu on the right side
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-person" viewBox="0 0 16 16">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                            </svg>
+                            Navigate to Results page from the main menu on the right side
+
                         </li>
                         <li>
-                            Click the button under the tests success statuses to download your certificate
+                            Click the button under the test success statuses Download your certificate
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-download" viewBox="0 0 16 16">
                                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row m-5">
+                <div class="col">
+                    <h4>
+                        How to receive the certificate on email
+                    </h4>
+                    <ul>
+                        <li>
+                            Navigate to Results page from the main menu on the right side
+                        </li>
+                        <li>
+                            Click the button under the test success statuses Send certificate on email
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                             </svg>
                         </li>
                     </ul>
@@ -156,7 +176,7 @@
                 </div>
                 <div class="col">
                     <p>
-                        Email: disasters@mail.com
+                        Email: disastersapp@gmail.com
                     </p>
                 </div>
             </div>
